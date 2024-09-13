@@ -1,0 +1,56 @@
+.header__navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.div__navbar {
+  background: #fff;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  padding: 1.6rem;
+}
+
+.icon__menu {
+  grid-column: 1;
+  margin-right: 2rem;
+  width: 20px;
+}
+
+.icon__logo {
+  grid-column: 2;
+  width: 40px;
+}
+
+.icon__div_account {
+  grid-column: 3;
+  justify-self: flex-end;
+  width: 35px;
+}
+.icon__account {
+  width: 26px;
+}
+
+.icon__div_cart {
+  grid-column: 4;
+  margin-left: 0.8rem;
+}
+
+.icon__cart {
+  width: 27px;
+}
+
+.div__navbar div {
+  display: flex;
+  align-items: center;
+}
+
+.icon__menu:hover,
+.icon__logo:hover,
+.icon__account:hover,
+.icon__cart:hover {
+  cursor: pointer;
+}
