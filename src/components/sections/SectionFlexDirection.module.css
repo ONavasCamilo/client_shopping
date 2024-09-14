@@ -1,0 +1,6 @@
+.section__flex_direction {
+    margin-top: 90px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}

@@ -5,7 +5,7 @@ import iconAccount from "/iconAccount.svg";
 import iconCart from "/iconCart.svg";
 import iconCloseX from "/iconCloseX.svg";
 import { useState } from "react";
-import Menu from "./Menu";
+import Menu from "../menu/Menu";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {

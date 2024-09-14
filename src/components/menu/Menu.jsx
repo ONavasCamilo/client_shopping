@@ -27,7 +27,10 @@ const Menu = ({ isOpenMenu }) => {
           <NavLink to="/login">
             <p className={style.p__strong}>Login</p>
           </NavLink>
+          <NavLink to="/register">
           <p className={style.p__strong}>Registrarse</p>
+          </NavLink>
+
         </div>
       </div>
       <div className={style.background__openMenu}></div>

@@ -1,27 +1,26 @@
 import Button from "../../components/buttons/Button";
-import LineDiv from "../../components/lineDiv/LineDiv";
 import InputText from "../../components/inputText/InputText";
+import LineDiv from "../../components/lineDiv/LineDiv";
 import SectionFlexDirection from "../../components/sections/SectionFlexDirection";
 import TitleComponent from "../../components/title/TitleComponent";
-import style from "./Login.module.css";
+import style from "./Register.module.css";
 
-const Login = () => {
+const Register = () => {
   return (
     <main>
       <SectionFlexDirection>
-        <TitleComponent text="LOGIN" />
+        <TitleComponent text="REGISTRARSE" />
         <InputText placeholder="Correo electrónico" />
+        <InputText placeholder="Nombre" />
+        <InputText placeholder="Apellidos" />
         <InputText placeholder="Contraseña" />
-        <span className={style.span__olvidaste_contraseña}>
-          ¿Olvidaste tu contraseña?
-        </span>
-        <Button text="Login" color="black" />
+        <Button text="Crear una cuenta" />
         <LineDiv />
-        <p className={style.p__no_tienes_una_cuenta}>¿No tienes una cuenta?</p>
-        <ButtonBlack text="Crear una cuenta" color="white" />
+        <p className={style.p__ya_tienes_una_cuenta}>¿Ya tienes una cuenta?</p>
+        <Button text="Login" color="white" />
       </SectionFlexDirection>
     </main>
   );
 };
 
-export default Login;
+export default Register;
