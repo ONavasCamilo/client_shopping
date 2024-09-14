@@ -31,7 +31,7 @@
   position: fixed;
   background: #fff;
   display: flex;
-  left: -200px;
+  left: -2000px;
   z-index: 50;
   animation: hideMenu 0.45s ease-in-out;
 }

@@ -8,7 +8,11 @@ const Menu = ({ isOpenMenu }) => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? style.menu__navlink : isActive ? style.navlink_active : ""
+            isPending
+              ? style.menu__navlink
+              : isActive
+              ? style.navlink_active
+              : ""
           }
         >
           <p className={style.p__strong}>Home</p>
@@ -20,7 +24,9 @@ const Menu = ({ isOpenMenu }) => {
         </div>
         <div>
           <p className={style.p__strong}>Carrito</p>
-          <p className={style.p__strong}>Login</p>
+          <NavLink to="/login">
+            <p className={style.p__strong}>Login</p>
+          </NavLink>
           <p className={style.p__strong}>Registrarse</p>
         </div>
       </div>
