@@ -18,7 +18,7 @@ const Login = () => {
         <Button text="Login" color="black" />
         <LineDiv />
         <p className={style.p__no_tienes_una_cuenta}>¿No tienes una cuenta?</p>
-        <ButtonBlack text="Crear una cuenta" color="white" />
+        <Button text="Crear una cuenta" color="white" />
       </SectionFlexDirection>
     </main>
   );
