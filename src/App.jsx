@@ -4,10 +4,11 @@ import Home from "./views/home/Home";
 import Login from "./views/Login/Login";
 import Register from "./views/register/Register";
 import Account from "./views/account/Account";
+import { AuthProvider } from "./providers/UserProvider";
 
 const App = () => {
   return (
-    <>
+    <AuthProvider>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -15,7 +16,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<Account />} />
       </Routes>
-    </>
+    </AuthProvider>
   );
 };
 

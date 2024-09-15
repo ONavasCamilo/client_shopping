@@ -1,17 +1,16 @@
 import style from "./Account.module.css";
 import SectionFlexDirection from "../../components/sections/SectionFlexDirection";
 import TitleComponent from "../../components/title/TitleComponent";
-import { useSelector } from "react-redux";
+import { useAuthContext } from "../../providers/UserProvider";
 
 const Account = () => {
 
-  const userData = useSelector((state) => state.userData);
-  const token = useSelector((state) => state.token);
+  const { user } = useAuthContext();
 
   return (
     <main>
       <SectionFlexDirection>
-        <TitleComponent text={`Hola ${userData.name}`}/>
+        <TitleComponent text={`Hola ${user ? user.name : 'nada'}`}/>
       </SectionFlexDirection>
     </main>
   );

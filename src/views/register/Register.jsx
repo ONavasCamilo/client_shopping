@@ -1,6 +1,5 @@
 import style from "./Register.module.css";
 import { useState } from "react";
-import { setNewUser } from "../../redux/authSlice";
 import Button from "../../components/buttons/Button";
 import InputText from "../../components/inputText/InputText";
 import LineDiv from "../../components/lineDiv/LineDiv";
@@ -8,7 +7,9 @@ import SectionFlexDirection from "../../components/sections/SectionFlexDirection
 import TermsAndConditions from "../../components/termsAndConditions/TermsAndConditions";
 import TitleComponent from "../../components/title/TitleComponent";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import {
+  useSetAuthContext,
+} from "../../providers/UserProvider";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -20,20 +21,16 @@ const Register = () => {
   };
   const [userData, setUserData] = useState(initialState);
 
-  const dispatch = useDispatch();
+  const setAuthContext = useSetAuthContext();
   const navigate = useNavigate();
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
     axios
       .post("https://api-shopping-4vo0.onrender.com/api/auth/signup", userData)
-      .then(({ data }) => data)
-      .then((data) => {
-        // dispatch({
-        //   type: "auth/setNewUser",
-        //   payload: data
-        // });
-        dispatch(setNewUser(data))
+      .then(({data}) => {
+        const { newUser, token } = data;
+        setAuthContext(newUser, token);
         setUserData(initialState);
         navigate("/account")
       })
@@ -85,7 +82,7 @@ const Register = () => {
           <p className={style.p__ya_tienes_una_cuenta}>
             ¿Ya tienes una cuenta?
           </p>
-          <Button text="Login" color="white" navigateOnClick="/login"/>
+          <Button text="Login" color="white" navigateOnClick="/login" />
         </SectionFlexDirection>
       </form>
     </main>
