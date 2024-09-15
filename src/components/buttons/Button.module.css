@@ -1,5 +1,5 @@
 .button__black {
-  margin: 35px 5px;
+  margin: 30px 5px;
   padding: 15.5px;
   background: #000000;
   color: #f2f2f2;
@@ -14,7 +14,7 @@
 }
 
 .button__white {
-  margin: 35px 5px;
+  margin: 30px 5px;
   padding: 15.5px;
   background: #ffffff;
   color: #000000;
