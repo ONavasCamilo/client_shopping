@@ -7,13 +7,13 @@
   z-index: 50;
 }
 
+
 .hide {
-  height: 100%;
   position: fixed;
+  height: 100%;
   background: #fff;
   display: flex;
-  left: -2000px;
-  z-index: 150;
+  margin-top: -1000px;
 }
 
 .menu__div {
@@ -62,7 +62,7 @@
 }
 
 .menu_cont .background__openMenu {
-  opacity: 0.5;
+  opacity: .5;
 }
 
 .hide .background__openMenu {

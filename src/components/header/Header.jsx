@@ -34,7 +34,7 @@ const Header = () => {
           <img src={iconLogo} className={style.icon__logo} />
         </NavLink>
         <div className={style.icon__div_account}>
-          <NavLink to="/">
+          <NavLink to="/login" onClick={() => setIsOpenMenu(false)}>
             <img src={iconAccount} className={style.icon__account} />
             {/* <span>Cuenta</span> */}
           </NavLink>
