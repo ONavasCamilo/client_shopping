@@ -10,7 +10,7 @@ const Account = () => {
   return (
     <main>
       <SectionFlexDirection>
-        <TitleComponent text={`Hola ${user ? user.name : 'nada'}`}/>
+        <TitleComponent text={`Hola ${user ? user.name : ''}`}/>
       </SectionFlexDirection>
     </main>
   );

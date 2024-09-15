@@ -39,14 +39,6 @@ const Register = () => {
       });
   };
 
-  const handleOnChange = (e) => {
-    const { name, value } = e.target;
-    setUserData({
-      ...userData,
-      [name]: value,
-    });
-  };
-
   return (
     <main>
       <form onSubmit={handleOnSubmit}>
@@ -54,27 +46,31 @@ const Register = () => {
           <TitleComponent text="REGISTRARSE" />
           <InputText
             placeholder="Correo electrónico"
-            handleOnChange={handleOnChange}
             name="email"
             type="text"
+            userData={userData}
+            setUserData={setUserData}
           />
           <InputText
             placeholder="Nombre"
-            handleOnChange={handleOnChange}
             name="name"
             type="text"
+            userData={userData}
+            setUserData={setUserData}
           />
           <InputText
             placeholder="Apellidos"
-            handleOnChange={handleOnChange}
             name="lastname"
             type="text"
+            userData={userData}
+            setUserData={setUserData}
           />
           <InputText
             placeholder="Contraseña"
-            handleOnChange={handleOnChange}
             name="password"
             type="password"
+            userData={userData}
+            setUserData={setUserData}
           />
           <TermsAndConditions />
           <Button text="Crear una cuenta" type="submit" />
