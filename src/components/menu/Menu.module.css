@@ -53,9 +53,9 @@
 
 .navlink_active {
   text-decoration-line: underline;
-  text-underline-offset: 5px;
+  text-underline-offset: 7px;
   text-decoration-thickness: 1px;
-  color: #020202;
+  color: #020202e0;
 }
 
 .p__strong {

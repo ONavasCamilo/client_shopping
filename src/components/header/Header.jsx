@@ -30,7 +30,7 @@ const Header = () => {
             className={style.icon__menu}
           />
         )}
-        <NavLink to="/">
+        <NavLink to="/" onClick={() => setIsOpenMenu(false)}>
           <img src={iconLogo} className={style.icon__logo} />
         </NavLink>
         <div className={style.icon__div_account}>
@@ -44,7 +44,7 @@ const Header = () => {
           {/* <span>Carrito</span> */}
         </div>
       </div>
-      <Menu isOpenMenu={isOpenMenu} />
+      <Menu isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
     </header>
   );
 };
