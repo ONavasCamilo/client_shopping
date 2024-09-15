@@ -5,25 +5,6 @@
   display: flex;
   left: 0px;
   z-index: 50;
-  animation: showMenu 0.45s ease-in-out;
-}
-
-@keyframes showMenu {
-  0% {
-    left: -200px;
-  }
-  100% {
-    left: 0px;
-  }
-}
-
-@keyframes hideMenu {
-  0% {
-    left: 0px;
-  }
-  100% {
-    left: -200px;
-  }
 }
 
 .hide {
@@ -32,8 +13,7 @@
   background: #fff;
   display: flex;
   left: -2000px;
-  z-index: 50;
-  animation: hideMenu 0.45s ease-in-out;
+  z-index: 150;
 }
 
 .menu__div {
@@ -82,10 +62,10 @@
 }
 
 .menu_cont .background__openMenu {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .hide .background__openMenu {
   opacity: 0;
-  /* z-index: -1; */
+  z-index: -50;
 }

@@ -35,15 +35,16 @@ const Header = () => {
         </NavLink>
         <div className={style.icon__div_account}>
           <NavLink to="/">
-            <img src={iconAccount} className={style.icon__account}/>
+            <img src={iconAccount} className={style.icon__account} />
             {/* <span>Cuenta</span> */}
           </NavLink>
         </div>
-        <div className={style.icon__div_cart} >
-          <img src={iconCart} className={style.icon__cart}/>
+        <div className={style.icon__div_cart}>
+          <img src={iconCart} className={style.icon__cart} />
           {/* <span>Carrito</span> */}
         </div>
       </div>
+
       <Menu isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
     </header>
   );

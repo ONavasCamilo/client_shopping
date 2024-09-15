@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import style from "./Menu.module.css";
+import { motion } from "framer-motion";
 
 const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
   const getNavLinkClassName = ({ isActive, isPending }) => {
@@ -13,7 +14,12 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
   };
 
   return (
-    <div className={isOpenMenu ? style.menu_cont : style.hide}>
+    <motion.div
+      initial={{ left: "-200px" }}
+      animate={{ left: isOpenMenu ? "0px" : "-300px" }}
+      transition={{ duration: 0.45, ease: "easeInOut" }}
+      className={isOpenMenu ? style.menu_cont : style.hide}
+    >
       <div className={style.menu__div}>
         <NavLink
           to="/"
@@ -46,7 +52,7 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
         </div>
       </div>
       <div className={style.background__openMenu}></div>
-    </div>
+    </motion.div>
   );
 };
 
