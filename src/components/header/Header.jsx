@@ -44,8 +44,8 @@ const Header = () => {
           {/* <span>Carrito</span> */}
         </div>
       </div>
-
-      <Menu isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
+      
+    <Menu isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
     </header>
   );
 };

@@ -15,8 +15,8 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
 
   return (
     <motion.div
-      initial={{ left: "-200px" }}
-      animate={{ left: isOpenMenu ? "0px" : "-300px" }}
+      initial={{ left: isOpenMenu ? '0px' : '-200px'}}
+      animate={{ left: isOpenMenu ? "0px" : "-200px" }}
       transition={{ duration: 0.45, ease: "easeInOut" }}
       className={isOpenMenu ? style.menu_cont : style.hide}
     >
