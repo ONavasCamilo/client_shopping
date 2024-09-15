@@ -15,12 +15,18 @@ export function AuthProvider({ children }) {
   const [auth, setAuth] = useState({ user: {}, token: null });
 
   const handleOnAuthContext = (newUser, newToken) => {
-    setAuth({ user: newUser, token: newToken })
+    setAuth({ user: newUser, token: newToken });
+  };
+
+  const handleLogoutAuthContext = () => {
+    setAuth({ user: {}, token: null });
   };
 
   return (
     <authContext.Provider value={auth}>
-      <setAuthContext.Provider value={handleOnAuthContext}>
+      <setAuthContext.Provider
+        value={{ handleOnAuthContext, handleLogoutAuthContext }}
+      >
         {children}
       </setAuthContext.Provider>
     </authContext.Provider>

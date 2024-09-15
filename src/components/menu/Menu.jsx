@@ -1,8 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import style from "./Menu.module.css";
 import { motion } from "framer-motion";
+import {
+  useAuthContext,
+  useSetAuthContext,
+} from "../../providers/UserProvider";
 
 const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
+  const { user } = useAuthContext();
+  const { handleLogoutAuthContext } = useSetAuthContext();
+
+  const navigate = useNavigate();
+
   const getNavLinkClassName = ({ isActive, isPending }) => {
     if (isPending) {
       return style.menu__navlink;
@@ -13,9 +22,15 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
     }
   };
 
+  const onClickLogout = () => {
+    handleLogoutAuthContext();
+    setIsOpenMenu(false);
+    navigate("/");
+  };
+
   return (
     <motion.div
-      initial={{ left: isOpenMenu ? '0px' : '-200px'}}
+      initial={{ left: isOpenMenu ? "0px" : "-200px" }}
       animate={{ left: isOpenMenu ? "0px" : "-200px" }}
       transition={{ duration: 0.45, ease: "easeInOut" }}
       className={isOpenMenu ? style.menu_cont : style.hide}
@@ -35,20 +50,28 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
         </div>
         <div>
           <p className={style.p__strong}>Carrito</p>
-          <NavLink
-            to="/login"
-            onClick={() => setIsOpenMenu(false)}
-            className={getNavLinkClassName}
-          >
-            <p className={style.p__strong}>Login</p>
-          </NavLink>
-          <NavLink
-            to="/register"
-            onClick={() => setIsOpenMenu(false)}
-            className={getNavLinkClassName}
-          >
-            <p className={style.p__strong}>Registrarse</p>
-          </NavLink>
+          {user && user.name ? (
+            <p className={style.p__strong} onClick={onClickLogout}>
+              Cerrar sesión
+            </p>
+          ) : (
+            <>
+              <NavLink
+                to="/login"
+                onClick={() => setIsOpenMenu(false)}
+                className={getNavLinkClassName}
+              >
+                <p className={style.p__strong}>Login</p>
+              </NavLink>
+              <NavLink
+                to="/register"
+                onClick={() => setIsOpenMenu(false)}
+                className={getNavLinkClassName}
+              >
+                <p className={style.p__strong}>Registrarse</p>
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
       <div className={style.background__openMenu}></div>

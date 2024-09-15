@@ -17,7 +17,8 @@ const Login = () => {
 
   const [userData, setUserData] = useState(initialState);
 
-  const setAuthContext = useSetAuthContext();
+  const { handleOnAuthContext } = useSetAuthContext();
+
   const navigate = useNavigate();
 
   const handleOnSubmit = (e) => {
@@ -26,7 +27,7 @@ const Login = () => {
       .post("https://api-shopping-4vo0.onrender.com/api/auth/signin", userData)
       .then(({ data }) => {
         const { user, token } = data;
-        setAuthContext(user, token);
+        handleOnAuthContext(user, token);
         setUserData(initialState);
         navigate("/account");
       });

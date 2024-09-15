@@ -7,9 +7,7 @@ import SectionFlexDirection from "../../components/sections/SectionFlexDirection
 import TermsAndConditions from "../../components/termsAndConditions/TermsAndConditions";
 import TitleComponent from "../../components/title/TitleComponent";
 import axios from "axios";
-import {
-  useSetAuthContext,
-} from "../../providers/UserProvider";
+import { useSetAuthContext } from "../../providers/UserProvider";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -21,18 +19,18 @@ const Register = () => {
   };
   const [userData, setUserData] = useState(initialState);
 
-  const setAuthContext = useSetAuthContext();
+  const { handleOnAuthContext } = useSetAuthContext();
   const navigate = useNavigate();
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
     axios
       .post("https://api-shopping-4vo0.onrender.com/api/auth/signup", userData)
-      .then(({data}) => {
+      .then(({ data }) => {
         const { newUser, token } = data;
-        setAuthContext(newUser, token);
+        handleOnAuthContext(newUser, token);
         setUserData(initialState);
-        navigate("/account")
+        navigate("/account");
       })
       .catch((err) => {
         console.log("Error: ", err);
