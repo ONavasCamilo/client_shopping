@@ -1,16 +1,17 @@
 .div__terms {
-    margin-bottom: 10px;
-    padding: 10px;
-    display: flex;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
 }
 
 .input__checkbox {
-    margin-right: 12px;
-    align-self: flex-start;
-    width: 23px;
-  height: 23px;
+  margin-right: 12px;
+  align-self: flex-start;
+  width: 20px;
+  height: 20px;
+  accent-color: #000;
 }
 
 .span__terms {
-    font-size: 14px;
+  font-size: 14px;
 }
