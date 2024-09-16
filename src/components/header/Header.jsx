@@ -44,7 +44,9 @@ const Header = () => {
           </NavLink>
         </div>
         <div className={style.icon__div_cart}>
+        <NavLink to="/car" onClick={() => setIsOpenMenu(false)}>
           <img src={iconCart} className={style.icon__cart} />
+          </NavLink>
           {/* <span>Carrito</span> */}
         </div>
       </div>

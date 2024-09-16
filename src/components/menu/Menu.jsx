@@ -49,7 +49,9 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
           <p>ACCESORIOS</p>
         </div>
         <div>
-          <p className={style.p__strong}>Carrito</p>
+          <NavLink to="/car" onClick={() => setIsOpenMenu(false)} className={getNavLinkClassName}>
+            <p className={style.p__strong}>Carrito</p>
+          </NavLink>
           {user && user.name ? (
             <p className={style.p__strong} onClick={onClickLogout}>
               Cerrar sesión
