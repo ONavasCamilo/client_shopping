@@ -28,7 +28,9 @@ const Register = () => {
       .post("https://api-shopping-4vo0.onrender.com/api/auth/signup", userData)
       .then(({ data }) => {
         const { newUser, token } = data;
-        handleOnAuthContext(newUser, token);
+        handleOnAuthContext(true, newUser, token);
+        window.localStorage.setItem("user", JSON.stringify(newUser));
+        window.sessionStorage.setItem("token", token);
         setUserData(initialState);
         navigate("/account");
       })

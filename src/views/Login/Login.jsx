@@ -27,7 +27,9 @@ const Login = () => {
       .post("https://api-shopping-4vo0.onrender.com/api/auth/signin", userData)
       .then(({ data }) => {
         const { user, token } = data;
-        handleOnAuthContext(user, token);
+        handleOnAuthContext(true, user, token);
+        window.localStorage.setItem("user", JSON.stringify(user));
+        window.sessionStorage.setItem("token", token);
         setUserData(initialState);
         navigate("/account");
       });

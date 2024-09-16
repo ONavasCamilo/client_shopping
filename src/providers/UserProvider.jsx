@@ -12,14 +12,14 @@ export function useSetAuthContext() {
 }
 
 export function AuthProvider({ children }) {
-  const [auth, setAuth] = useState({ user: {}, token: null });
+  const [auth, setAuth] = useState({ login: false, user: {}, token: null, detailsUser: {}});
 
-  const handleOnAuthContext = (newUser, newToken) => {
-    setAuth({ user: newUser, token: newToken });
+  const handleOnAuthContext = (login, user, token, detailsUser) => {
+    setAuth({ login, user, token, detailsUser });
   };
 
   const handleLogoutAuthContext = () => {
-    setAuth({ user: {}, token: null });
+    setAuth({ login: false, user: {}, token: null, detailsUser: {} });
   };
 
   return (

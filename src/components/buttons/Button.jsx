@@ -9,21 +9,20 @@ const Button = ({ text, color, type, navigateOnClick, logout }) => {
   const buttonClass =
     color === "white" ? style.button__white : style.button__black;
 
-    const handleClick = () => {
-      if (logout) {
-        handleLogoutAuthContext();
-        navigate("/")
-      } else if (navigateOnClick) {
-        navigate(navigateOnClick);
-      }
-    };
+  const handleClick = () => {
+    if (logout) {
+      window.localStorage.removeItem("user");
+      window.localStorage.removeItem("detailsUser");
+      window.sessionStorage.removeItem("token");
+      handleLogoutAuthContext();
+      navigate("/");
+    } else if (navigateOnClick) {
+      navigate(navigateOnClick);
+    }
+  };
 
   return (
-    <button
-      className={buttonClass}
-      type={type}
-      onClick={handleClick}
-    >
+    <button className={buttonClass} type={type} onClick={handleClick}>
       {text}
     </button>
   );

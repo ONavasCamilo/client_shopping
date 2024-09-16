@@ -23,6 +23,9 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
   };
 
   const onClickLogout = () => {
+    window.localStorage.removeItem("user");
+    window.localStorage.removeItem("detailsUser");
+    window.sessionStorage.removeItem("token");
     handleLogoutAuthContext();
     setIsOpenMenu(false);
     navigate("/");
@@ -49,7 +52,11 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
           <p>ACCESORIOS</p>
         </div>
         <div>
-          <NavLink to="/car" onClick={() => setIsOpenMenu(false)} className={getNavLinkClassName}>
+          <NavLink
+            to="/car"
+            onClick={() => setIsOpenMenu(false)}
+            className={getNavLinkClassName}
+          >
             <p className={style.p__strong}>Carrito</p>
           </NavLink>
           {user && user.name ? (

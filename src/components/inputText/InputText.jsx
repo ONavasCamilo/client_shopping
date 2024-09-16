@@ -1,6 +1,6 @@
 import style from "./InputText.module.css";
 
-const InputTextLogin = ({ placeholder, name, type, userData, setUserData }) => {
+const InputTextLogin = ({ placeholder, name, type, userData, setUserData, value }) => {
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -17,6 +17,7 @@ const InputTextLogin = ({ placeholder, name, type, userData, setUserData }) => {
       className={style.button__login}
       name={name}
       onChange={handleOnChange}
+      value={value}
     ></input>
   );
 };
