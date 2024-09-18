@@ -6,6 +6,7 @@ import SubtitleComponent from "../../../components/subtitle/SubtitleComponent";
 import TitleComponent from "../../../components/title/TitleComponent";
 import { useAuthContext, useSetAuthContext } from "../../../providers/UserProvider";
 import axios from "axios";
+import { VITE_API_USERS_ADDDETAILSUSER, VITE_API_USERS_UPDATE_DETAILSUSER } from "../../../config/env.config";
 
 const DetailsPersonal = () => {
   const { user, token, detailsUser } = useAuthContext();
@@ -24,8 +25,8 @@ const DetailsPersonal = () => {
   const [detailsData, setDetailsData] = useState(initialState);
 
   const API_CALL = detailsUser?.detailsName
-    ? `https://api-shopping-4vo0.onrender.com/api/users/update/detailsUser/${user.id}`
-    : `https://api-shopping-4vo0.onrender.com/api/users/addDetailsUser/${user.id}`;
+    ? VITE_API_USERS_UPDATE_DETAILSUSER + user.id
+    : VITE_API_USERS_ADDDETAILSUSER + user.id;
   const method = detailsUser?.detailsName ? "PUT" : "POST";
 
   const handleOnSubmit = async (e) => {
@@ -78,7 +79,7 @@ const DetailsPersonal = () => {
             placeholder="Apellidos"
             name="detailsLastname"
             type="text"
-            value={detailsData.detailsLastname}
+            value={detailsUser?.detailsLastname}
             userData={detailsData}
             setUserData={setDetailsData}
           />
@@ -86,7 +87,7 @@ const DetailsPersonal = () => {
             placeholder="Dirección"
             name="address"
             type="text"
-            value={detailsData.address}
+            value={detailsUser?.address}
             userData={detailsData}
             setUserData={setDetailsData}
           />
@@ -94,7 +95,7 @@ const DetailsPersonal = () => {
             placeholder="Código postal"
             name="postalCode"
             type="text"
-            value={detailsData.postalCode}
+            value={detailsUser?.postalCode}
             userData={detailsData}
             setUserData={setDetailsData}
           />
@@ -102,7 +103,7 @@ const DetailsPersonal = () => {
             placeholder="Localidad"
             name="location"
             type="text"
-            value={detailsData.location}
+            value={detailsUser?.location}
             userData={detailsData}
             setUserData={setDetailsData}
           />
@@ -110,7 +111,7 @@ const DetailsPersonal = () => {
             placeholder="País"
             name="country"
             type="text"
-            value={detailsData.country}
+            value={detailsUser?.country}
             userData={detailsData}
             setUserData={setDetailsData}
           />
@@ -118,7 +119,7 @@ const DetailsPersonal = () => {
             placeholder="Teléfono"
             name="phone"
             type="text"
-            value={detailsData.phone}
+            value={detailsUser?.phone}
             userData={detailsData}
             setUserData={setDetailsData}
           />

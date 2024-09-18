@@ -9,6 +9,7 @@ import TitleComponent from "../../components/title/TitleComponent";
 import axios from "axios";
 import { useSetAuthContext } from "../../providers/UserProvider";
 import { useNavigate } from "react-router-dom";
+import { VITE_API_AUTH_SIGNUP } from "../../config/env.config";
 
 const Register = () => {
   const initialState = {
@@ -25,12 +26,13 @@ const Register = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://api-shopping-4vo0.onrender.com/api/auth/signup", userData)
+      .post(VITE_API_AUTH_SIGNUP, userData)
       .then(({ data }) => {
         const { newUser, token } = data;
-        handleOnAuthContext(true, newUser, token);
+        handleOnAuthContext(true, newUser, token, newUser.detailUser);
         window.localStorage.setItem("user", JSON.stringify(newUser));
         window.sessionStorage.setItem("token", token);
+        window.localStorage.setItem("detailsUser", JSON.stringify(newUser.detailUser));
         setUserData(initialState);
         navigate("/account");
       })

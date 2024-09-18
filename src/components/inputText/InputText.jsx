@@ -17,7 +17,7 @@ const InputTextLogin = ({ placeholder, name, type, userData, setUserData, value 
       className={style.button__login}
       name={name}
       onChange={handleOnChange}
-      value={value}
+      value={value || ""}
     ></input>
   );
 };

@@ -25,6 +25,7 @@ const App = () => {
 
     if (userData && tokenData) {
     const userDataParse = JSON.parse(userData);
+    // const detailsUserParse = JSON.parse(detailsData);
     const detailsUserParse = detailsData ? JSON.parse(detailsData) : {};
     handleOnAuthContext(true, userDataParse, tokenData, detailsUserParse);
   }
@@ -34,7 +35,7 @@ const App = () => {
     if (!login) {
       getLocalStorage();
     }
-  }, [login]);
+  });
 
   return (
     <>

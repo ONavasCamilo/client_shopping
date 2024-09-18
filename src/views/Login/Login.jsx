@@ -8,6 +8,7 @@ import style from "./Login.module.css";
 import { useSetAuthContext } from "../../providers/UserProvider";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { VITE_API_AUTH_SIGNIN } from "../../config/env.config";
 
 const Login = () => {
   const initialState = {
@@ -24,12 +25,13 @@ const Login = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://api-shopping-4vo0.onrender.com/api/auth/signin", userData)
+      .post(VITE_API_AUTH_SIGNIN, userData)
       .then(({ data }) => {
         const { user, token } = data;
-        handleOnAuthContext(true, user, token);
+        handleOnAuthContext(true, user, token, user.detailUser);
         window.localStorage.setItem("user", JSON.stringify(user));
         window.sessionStorage.setItem("token", token);
+        window.localStorage.setItem("detailsUser", JSON.stringify(user.detailUser));
         setUserData(initialState);
         navigate("/account");
       });
