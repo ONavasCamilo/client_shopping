@@ -13,6 +13,8 @@ import Account from "./views/account/Account";
 import ChangePassword from "./views/account/changePassword/ChangePassword";
 import Car from "./views/car/Car";
 import { useEffect } from "react";
+import Message from "./components/message/Message";
+import { MessageProvider, useMessageContext } from "./providers/MessageGlobalProvider";
 
 const App = () => {
   const { login } = useAuthContext();
@@ -25,7 +27,6 @@ const App = () => {
 
     if (userData && tokenData) {
     const userDataParse = JSON.parse(userData);
-    // const detailsUserParse = JSON.parse(detailsData);
     const detailsUserParse = detailsData ? JSON.parse(detailsData) : {};
     handleOnAuthContext(true, userDataParse, tokenData, detailsUserParse);
   }
@@ -38,7 +39,7 @@ const App = () => {
   });
 
   return (
-    <>
+    <MessageProvider>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -50,8 +51,14 @@ const App = () => {
         <Route path="/changePassword" element={<ChangePassword />} />
         <Route path="/car" element={<Car />} />
       </Routes>
-    </>
+      <GlobalMessage />
+    </MessageProvider>
   );
+};
+
+const GlobalMessage = () => {
+  const { message } = useMessageContext();
+  return message ? <Message message={message} duration={3000} /> : null;
 };
 
 export default App;

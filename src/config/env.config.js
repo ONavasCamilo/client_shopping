@@ -6,3 +6,5 @@ export const VITE_API_USERS_UPDATE_DETAILSUSER = import.meta.env
 export const VITE_API_USERS_ADDDETAILSUSER = import.meta.env
   .VITE_API_USERS_ADDDETAILSUSER;
 export const VITE_API_USERS_UPDATE = import.meta.env.VITE_API_USERS_UPDATE;
+export const VITE_API_USERS_UPDATE_PASSWORD = import.meta.env
+  .VITE_API_USERS_UPDATE_PASSWORD;

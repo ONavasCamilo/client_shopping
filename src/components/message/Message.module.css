@@ -1,0 +1,17 @@
+.success__message {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+  }
+  
+  .success__message.visible {
+    bottom: 20px;
+    opacity: 1;
+  }
