@@ -18,7 +18,9 @@ const Message = ({ message, duration = 3000 }) => {
     <div
       className={`${style.success__message} ${visible ? style.visible : ""}`}
     >
+      <span className={style.span__success}>
       {message}
+      </span>
     </div>
   );
 };

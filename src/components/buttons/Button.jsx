@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import style from "./Button.module.css";
 import { useSetAuthContext } from "../../providers/UserProvider";
+import { useMessageContext } from "../../providers/MessageGlobalProvider";
 
 const Button = ({ text, color, type, navigateOnClick, logout }) => {
   const { handleLogoutAuthContext } = useSetAuthContext();
   const navigate = useNavigate();
+
+  const { showMessage } = useMessageContext();
 
   const buttonClass =
     color === "white" ? style.button__white : style.button__black;
@@ -15,6 +18,7 @@ const Button = ({ text, color, type, navigateOnClick, logout }) => {
       window.localStorage.removeItem("detailsUser");
       window.sessionStorage.removeItem("token");
       handleLogoutAuthContext();
+      showMessage("Sesión cerrada con éxito");
       navigate("/");
     } else if (navigateOnClick) {
       navigate(navigateOnClick);

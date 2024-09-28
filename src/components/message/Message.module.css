@@ -1,17 +1,23 @@
 .success__message {
-    position: fixed;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: green;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.5s, bottom 0.5s;
-  }
-  
-  .success__message.visible {
-    bottom: 20px;
-    opacity: 1;
-  }
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  transform: translateX(-50%);
+  background-color: green;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+  display: flex;
+  align-items: center;
+}
+
+.success__message.visible {
+  opacity: 1;
+  padding: 15px;
+}
+
+.span__success {
+  padding: 10px;
+}

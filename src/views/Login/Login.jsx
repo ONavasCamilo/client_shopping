@@ -9,6 +9,7 @@ import { useSetAuthContext } from "../../providers/UserProvider";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { VITE_API_AUTH_SIGNIN } from "../../config/env.config";
+import { useMessageContext } from "../../providers/MessageGlobalProvider";
 
 const Login = () => {
   const initialState = {
@@ -19,6 +20,7 @@ const Login = () => {
   const [userData, setUserData] = useState(initialState);
 
   const { handleOnAuthContext } = useSetAuthContext();
+  const { showMessage } = useMessageContext();
 
   const navigate = useNavigate();
 
@@ -33,6 +35,7 @@ const Login = () => {
         window.sessionStorage.setItem("token", token);
         window.localStorage.setItem("detailsUser", JSON.stringify(user.detailUser));
         setUserData(initialState);
+        showMessage("Ha iniciado sesión correctamente");
         navigate("/account");
       });
   };
