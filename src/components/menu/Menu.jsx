@@ -5,22 +5,13 @@ import {
   useAuthContext,
   useSetAuthContext,
 } from "../../providers/UserProvider";
+import getNavLinkClassName from "./getNavLinkClassName.function";
 
 const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
   const { user } = useAuthContext();
   const { handleLogoutAuthContext } = useSetAuthContext();
 
   const navigate = useNavigate();
-
-  const getNavLinkClassName = ({ isActive, isPending }) => {
-    if (isPending) {
-      return style.menu__navlink;
-    } else if (isActive) {
-      return style.navlink_active;
-    } else {
-      return style.menu__navlink;
-    }
-  };
 
   const onClickLogout = () => {
     window.localStorage.removeItem("user");
@@ -47,9 +38,15 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
           <p className={style.p__strong}>Home</p>
         </NavLink>
         <div className={style.div__products}>
-          <p>SUDADERAS</p>
-          <p>CAMISETAS</p>
-          <p>ACCESORIOS</p>
+          <NavLink to="sweatshirts" className={getNavLinkClassName}>
+            <p>SUDADERAS</p>
+          </NavLink>
+          <NavLink to="tshirts" className={getNavLinkClassName}>
+            <p>CAMISETAS</p>
+          </NavLink>
+          <NavLink to="accesories" className={getNavLinkClassName}>
+            <p>ACCESORIOS</p>
+          </NavLink>
         </div>
         <div>
           <NavLink
