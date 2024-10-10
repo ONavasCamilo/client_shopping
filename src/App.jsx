@@ -15,7 +15,7 @@ import {
   MessageProvider,
   useMessageContext,
 } from "./providers/MessageGlobalProvider";
-import Sweatshirts from "./views/sudaderas/Sweatshirts";
+import Sweatshirts from "./views/sweatshirts/Sweatshirts";
 import Tshirts from "./views/tshirts/Tshirts";
 import Accesories from "./views/accesories/Accesories";
 
