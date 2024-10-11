@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../../../components/buttons/Button";
 import InputTextLogin from "../../../components/inputText/InputText";
-import SectionFlexDirection from "../../../components/sections/SectionFlexDirection";
+import SectionFlexDirection from "../../../components/sectionFlexDirection/SectionFlexDirection";
 import TitleComponent from "../../../components/title/TitleComponent";
 import { VITE_API_USERS_UPDATE_PASSWORD } from "../../../config/env.config";
 import { useAuthContext } from "../../../providers/UserProvider";

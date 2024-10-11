@@ -1,13 +1,13 @@
 import DivCardComponent from "../../components/divCardComponent/DivCardComponent";
-import SectionFlexDirection from "../../components/sections/SectionFlexDirection";
-import style from "./Sweatshirts.module.css";
+import SectionFlexDirection from "../../components/sectionFlexDirection/SectionFlexDirection";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { VITE_API_PRODUCTS_LIST } from "../../config/env.config";
+import TitleCenter from "../../components/titleCenter/TitleCenter";
+import SectionGridCard from "../../components/sectionGridCards/SectionGridCard";
 
 const Sweatshirts = () => {
   const [dataProducts, setDataProducts] = useState([]);
-  console.log(dataProducts);
 
   useEffect(() => {
     axios
@@ -26,8 +26,8 @@ const Sweatshirts = () => {
 
   return (
     <SectionFlexDirection>  
-      <h1 className={style.title__sweatshirts}>SUDADERAS</h1>
-      <section className={style.section__cards}>
+      <TitleCenter text="SUDADERAS"/>
+      <SectionGridCard>
         {dataProducts
           ? dataProducts.map((product) => (
               <DivCardComponent
@@ -38,7 +38,7 @@ const Sweatshirts = () => {
               />
             ))
           : null}
-      </section>
+     </SectionGridCard>
     </SectionFlexDirection>
   );
 };

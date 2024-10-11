@@ -1,4 +1,4 @@
-import SectionFlexDirection from "../../components/sections/SectionFlexDirection";
+import SectionFlexDirection from "../../components/sectionFlexDirection/SectionFlexDirection";
 
 const Tshirts = () => {
   return (

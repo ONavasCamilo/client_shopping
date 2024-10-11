@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../../components/buttons/Button";
 import LineDiv from "../../components/lineDiv/LineDiv";
 import InputText from "../../components/inputText/InputText";
-import SectionFlexDirection from "../../components/sections/SectionFlexDirection";
+import SectionFlexDirection from "../../components/sectionFlexDirection/SectionFlexDirection";
 import TitleComponent from "../../components/title/TitleComponent";
 import style from "./Login.module.css";
 import { useSetAuthContext } from "../../providers/UserProvider";

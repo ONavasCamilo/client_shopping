@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "../../../components/buttons/Button";
 import InputTextLogin from "../../../components/inputText/InputText";
-import SectionFlexDirection from "../../../components/sections/SectionFlexDirection";
+import SectionFlexDirection from "../../../components/sectionFlexDirection/SectionFlexDirection";
 import SubtitleComponent from "../../../components/subtitle/SubtitleComponent";
 import TitleComponent from "../../../components/title/TitleComponent";
 import {

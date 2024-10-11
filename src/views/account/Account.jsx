@@ -1,7 +1,7 @@
 import Button from "../../components/buttons/Button";
 import DivClickeable from "../../components/divClickeable/DivClickeable";
 import LineDiv from "../../components/lineDiv/LineDiv";
-import SectionFlexDirection from "../../components/sections/SectionFlexDirection";
+import SectionFlexDirection from "../../components/sectionFlexDirection/SectionFlexDirection";
 import TitleComponent from "../../components/title/TitleComponent";
 import { useAuthContext } from "../../providers/UserProvider";
 

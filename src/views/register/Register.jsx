@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from "../../components/buttons/Button";
 import InputText from "../../components/inputText/InputText";
 import LineDiv from "../../components/lineDiv/LineDiv";
-import SectionFlexDirection from "../../components/sections/SectionFlexDirection";
+import SectionFlexDirection from "../../components/sectionFlexDirection/SectionFlexDirection";
 import TermsAndConditions from "../../components/termsAndConditions/TermsAndConditions";
 import TitleComponent from "../../components/title/TitleComponent";
 import axios from "axios";
