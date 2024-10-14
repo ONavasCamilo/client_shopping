@@ -80,7 +80,7 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
           )}
         </div>
       </div>
-      <div className={style.background__openMenu}></div>
+      <div className={style.background__openMenu} onClick={() => setIsOpenMenu(false)}></div>
     </motion.div>
   );
 };
