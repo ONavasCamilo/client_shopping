@@ -18,6 +18,7 @@ import {
 import Sweatshirts from "./views/sweatshirts/Sweatshirts";
 import Tshirts from "./views/tshirts/Tshirts";
 import Accesories from "./views/accesories/Accesories";
+import Product from "./views/product/Product";
 
 const App = () => {
   const { login } = useAuthContext();
@@ -56,6 +57,7 @@ const App = () => {
         <Route path="/sweatshirts" element={<Sweatshirts />} />
         <Route path="/tshirts" element={<Tshirts />} />
         <Route path="/accesories" element={<Accesories />} />
+        <Route path="/product" element={<Product />} />
       </Routes>
       <GlobalMessage />
     </MessageProvider>

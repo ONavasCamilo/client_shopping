@@ -5,6 +5,7 @@ import axios from "axios";
 import { VITE_API_PRODUCTS_LIST } from "../../config/env.config";
 import TitleCenter from "../../components/titleCenter/TitleCenter";
 import SectionGridCard from "../../components/sectionGridCards/SectionGridCard";
+import { Link } from "react-router-dom";
 
 const Sweatshirts = () => {
   const [dataProducts, setDataProducts] = useState([]);
@@ -25,20 +26,21 @@ const Sweatshirts = () => {
   }, []);
 
   return (
-    <SectionFlexDirection>  
-      <TitleCenter text="SUDADERAS"/>
+    <SectionFlexDirection>
+      <TitleCenter text="SUDADERAS" />
       <SectionGridCard>
         {dataProducts
           ? dataProducts.map((product) => (
-              <DivCardComponent
-                key={product.id}
-                imgSrc={product.imgUrl}
-                title={product.name}
-                price={product.price}
-              />
+              <Link to={`/product?id=${product.id}`} key={product.id}>
+                <DivCardComponent
+                  imgSrc={product.imgUrl}
+                  title={product.name}
+                  price={product.price}
+                />
+              </Link>
             ))
           : null}
-     </SectionGridCard>
+      </SectionGridCard>
     </SectionFlexDirection>
   );
 };
