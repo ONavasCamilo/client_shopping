@@ -38,13 +38,25 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
           <p className={style.p__strong}>Home</p>
         </NavLink>
         <div className={style.div__products}>
-          <NavLink to="sweatshirts" className={getNavLinkClassName}>
+          <NavLink
+            to="sweatshirts"
+            className={getNavLinkClassName}
+            onClick={() => setIsOpenMenu(false)}
+          >
             <p>SUDADERAS</p>
           </NavLink>
-          <NavLink to="tshirts" className={getNavLinkClassName}>
+          <NavLink
+            to="tshirts"
+            className={getNavLinkClassName}
+            onClick={() => setIsOpenMenu(false)}
+          >
             <p>CAMISETAS</p>
           </NavLink>
-          <NavLink to="accesories" className={getNavLinkClassName}>
+          <NavLink
+            to="accesories"
+            className={getNavLinkClassName}
+            onClick={() => setIsOpenMenu(false)}
+          >
             <p>ACCESORIOS</p>
           </NavLink>
         </div>
@@ -80,7 +92,10 @@ const Menu = ({ isOpenMenu, setIsOpenMenu }) => {
           )}
         </div>
       </div>
-      <div className={style.background__openMenu} onClick={() => setIsOpenMenu(false)}></div>
+      <div
+        className={style.background__openMenu}
+        onClick={() => setIsOpenMenu(false)}
+      ></div>
     </motion.div>
   );
 };

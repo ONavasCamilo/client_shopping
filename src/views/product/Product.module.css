@@ -1,0 +1,46 @@
+.product_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.product_image {
+  margin-top: 20px;
+  max-width: 97%;
+  height: auto;
+}
+
+.product_price {
+  font-size: 16px;
+  margin: 4px 5px;
+}
+
+.arrow_button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #333;
+}
+
+.arrow_button:hover {
+  color: #555;
+}
+
+.sizes_container {
+  margin: 100px auto;
+  margin-bottom: 0;
+}
+
+.button_sizes {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button_selected {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
