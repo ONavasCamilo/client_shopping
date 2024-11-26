@@ -5,6 +5,8 @@ import SectionFlexDirection from "../../components/sectionFlexDirection/SectionF
 import { VITE_API_PRODUCTS_ONE } from "../../config/env.config";
 import SubtitleComponent from "../../components/subtitle/SubtitleComponent";
 import style from "./Product.module.css";
+import Button from "../../components/buttons/Button";
+import LineDiv from "../../components/lineDiv/LineDiv";
 
 const Product = () => {
   const location = useLocation();
@@ -12,12 +14,16 @@ const Product = () => {
   const id = searchParam.get("id");
 
   const [product, setProduct] = useState({});
+  const [groupProduct, setGroupProduct] = useState({});
   const [selectedSize, setSelectedSize] = useState("");
 
   useEffect(() => {
     axios
       .get(VITE_API_PRODUCTS_ONE + id)
-      .then((response) => setProduct(response.data))
+      .then((response) => {
+        setProduct(response.data.product);
+        setGroupProduct(response.data.groupProduct);
+      })
       .catch((error) => console.log(error));
   }, []);
 
@@ -25,6 +31,7 @@ const Product = () => {
     setSelectedSize(size);
   };
 
+  console.log(product);
   return (
     <SectionFlexDirection>
       <div className={style.product_container}>
@@ -51,6 +58,8 @@ const Product = () => {
           </button>
         ))}
       </div>
+      <Button text="Añadir a la cesta" />
+      <LineDiv />
     </SectionFlexDirection>
   );
 };
