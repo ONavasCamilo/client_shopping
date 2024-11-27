@@ -7,7 +7,6 @@
   z-index: 50;
 }
 
-
 .hide {
   position: fixed;
   height: 100%;
@@ -62,7 +61,7 @@
 }
 
 .menu_cont .background__openMenu {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .hide .background__openMenu {

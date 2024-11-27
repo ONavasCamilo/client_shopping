@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 .product_image {
@@ -30,7 +30,7 @@
 }
 
 .sizes_container {
-  margin: 100px auto;
+  margin: 40px auto;
   margin-bottom: 0;
 }
 
@@ -46,4 +46,18 @@
   font-weight: bold;
   font-size: 1.1rem;
   border-bottom: 2px solid #333;
+}
+
+.group__products_img {
+  width: 90px;
+  margin: 0 10px;
+  margin-top: 30px;
+}
+
+.group__products_img_select {
+  width: 90px;
+  margin: 0 10px;
+  margin-top: 30px;
+  border-bottom: 2px solid #020202;
+  opacity: 0.6;
 }

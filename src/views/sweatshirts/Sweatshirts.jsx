@@ -6,6 +6,7 @@ import { VITE_API_PRODUCTS_LIST } from "../../config/env.config";
 import TitleCenter from "../../components/titleCenter/TitleCenter";
 import SectionGridCard from "../../components/sectionGridCards/SectionGridCard";
 import { Link } from "react-router-dom";
+import style from "./Sweatshirts.module.css";
 
 const Sweatshirts = () => {
   const [dataProducts, setDataProducts] = useState([]);
@@ -31,7 +32,11 @@ const Sweatshirts = () => {
       <SectionGridCard>
         {dataProducts
           ? dataProducts.map((product) => (
-              <Link to={`/product?id=${product.id}`} key={product.id}>
+              <Link
+                to={`/product?id=${product.id}`}
+                key={product.id}
+                className={style.link__product}
+              >
                 <DivCardComponent
                   imgSrc={product.imgUrl}
                   title={product.name}

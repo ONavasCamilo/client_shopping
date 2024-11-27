@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SectionFlexDirection from "../../components/sectionFlexDirection/SectionFlexDirection";
 import { VITE_API_PRODUCTS_ONE } from "../../config/env.config";
 import SubtitleComponent from "../../components/subtitle/SubtitleComponent";
@@ -14,7 +14,7 @@ const Product = () => {
   const id = searchParam.get("id");
 
   const [product, setProduct] = useState({});
-  const [groupProduct, setGroupProduct] = useState({});
+  const [groupProduct, setGroupProduct] = useState([]);
   const [selectedSize, setSelectedSize] = useState("");
 
   useEffect(() => {
@@ -22,16 +22,15 @@ const Product = () => {
       .get(VITE_API_PRODUCTS_ONE + id)
       .then((response) => {
         setProduct(response.data.product);
-        setGroupProduct(response.data.groupProduct);
+        setGroupProduct(response.data.groupProductsByName);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [id]);
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
   };
 
-  console.log(product);
   return (
     <SectionFlexDirection>
       <div className={style.product_container}>
@@ -45,6 +44,20 @@ const Product = () => {
       </div>
       <SubtitleComponent text={product.name} />
       <p className={style.product_price}>{product.price} €</p>
+      <div className={style.div_group__products}>
+        {groupProduct.map((productGroup) => (
+          <Link key={productGroup.id} to={`/product?id=${productGroup.id}`}>
+            <img
+              src={productGroup.imgUrl}
+              className={
+                product.id === productGroup.id
+                  ? style.group__products_img_select
+                  : style.group__products_img
+              }
+            ></img>
+          </Link>
+        ))}
+      </div>
       <div className={style.sizes_container}>
         {["S", "M", "L", "XL", "XXL"].map((size) => (
           <button
