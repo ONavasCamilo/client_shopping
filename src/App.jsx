@@ -15,10 +15,10 @@ import {
   MessageProvider,
   useMessageContext,
 } from "./providers/MessageGlobalProvider";
-import Sweatshirts from "./views/sweatshirts/Sweatshirts";
-import Tshirts from "./views/tshirts/Tshirts";
-import Accesories from "./views/accesories/Accesories";
-import Product from "./views/product/Product";
+import Sweatshirts from "./views/products/sweatshirts/Sweatshirts";
+import Accesories from "./views/products/accesories/Accesories";
+import Product from "./views/products/product/Product";
+import Tshirts from "./views/products/tshirts/Tshirts";
 
 const App = () => {
   const { login } = useAuthContext();

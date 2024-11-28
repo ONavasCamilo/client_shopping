@@ -1,12 +1,12 @@
-import DivCardComponent from "../../components/divCardComponent/DivCardComponent";
-import SectionFlexDirection from "../../components/sectionFlexDirection/SectionFlexDirection";
+import DivCardComponent from "../../../components/divCardComponent/DivCardComponent";
+import SectionFlexDirection from "../../../components/sectionFlexDirection/SectionFlexDirection";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { VITE_API_PRODUCTS_LIST } from "../../config/env.config";
-import TitleCenter from "../../components/titleCenter/TitleCenter";
-import SectionGridCard from "../../components/sectionGridCards/SectionGridCard";
+import { VITE_API_PRODUCTS_LIST } from "../../../config/env.config";
 import { Link } from "react-router-dom";
-import style from "./Sweatshirts.module.css";
+import style from "../style.module.css";
+import SectionGridCard from "../../../components/sectionGridCards/SectionGridCard";
+import TitleCenter from "../../../components/titleCenter/TitleCenter";
 
 const Sweatshirts = () => {
   const [dataProducts, setDataProducts] = useState([]);

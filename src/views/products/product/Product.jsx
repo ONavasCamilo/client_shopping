@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import SectionFlexDirection from "../../components/sectionFlexDirection/SectionFlexDirection";
-import { VITE_API_PRODUCTS_ONE } from "../../config/env.config";
-import SubtitleComponent from "../../components/subtitle/SubtitleComponent";
+import SectionFlexDirection from "../../../components/sectionFlexDirection/SectionFlexDirection";
+import { VITE_API_PRODUCTS_ONE } from "../../../config/env.config";
+import SubtitleComponent from "../../../components/subtitle/SubtitleComponent";
 import style from "./Product.module.css";
-import Button from "../../components/buttons/Button";
-import LineDiv from "../../components/lineDiv/LineDiv";
+import Button from "../../../components/buttons/Button";
+import LineDiv from "../../../components/lineDiv/LineDiv";
 
 const Product = () => {
   const location = useLocation();
