@@ -19,6 +19,7 @@ import Sweatshirts from "./views/products/sweatshirts/Sweatshirts";
 import Accesories from "./views/products/accesories/Accesories";
 import Product from "./views/products/product/Product";
 import Tshirts from "./views/products/tshirts/Tshirts";
+import { CartProvider } from "./providers/CartProvider";
 
 const App = () => {
   const { login } = useAuthContext();
@@ -44,22 +45,24 @@ const App = () => {
 
   return (
     <MessageProvider>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/detailsPersonal" element={<DetailsPersonal />} />
-        <Route path="/changePassword" element={<ChangePassword />} />
-        <Route path="/car" element={<Car />} />
-        <Route path="/sweatshirts" element={<Sweatshirts />} />
-        <Route path="/tshirts" element={<Tshirts />} />
-        <Route path="/accesories" element={<Accesories />} />
-        <Route path="/product" element={<Product />} />
-      </Routes>
-      <GlobalMessage />
+      <CartProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/detailsPersonal" element={<DetailsPersonal />} />
+          <Route path="/changePassword" element={<ChangePassword />} />
+          <Route path="/car" element={<Car />} />
+          <Route path="/sweatshirts" element={<Sweatshirts />} />
+          <Route path="/tshirts" element={<Tshirts />} />
+          <Route path="/accesories" element={<Accesories />} />
+          <Route path="/product" element={<Product />} />
+        </Routes>
+        <GlobalMessage />
+      </CartProvider>
     </MessageProvider>
   );
 };
