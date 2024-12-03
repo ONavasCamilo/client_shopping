@@ -71,7 +71,7 @@ const Product = () => {
           </button>
         ))}
       </div>
-      <Button text="Añadir a la cesta" />
+      <Button text="Añadir a la cesta" onClickAddCart={product} />
       <LineDiv />
     </SectionFlexDirection>
   );

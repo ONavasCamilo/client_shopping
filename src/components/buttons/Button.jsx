@@ -2,12 +2,25 @@ import { useNavigate } from "react-router-dom";
 import style from "./Button.module.css";
 import { useSetAuthContext } from "../../providers/UserProvider";
 import { useMessageContext } from "../../providers/MessageGlobalProvider";
+import {
+  useCartContext,
+  useSetCartContext,
+} from "../../providers/CartProvider";
 
-const Button = ({ text, color, type, navigateOnClick, logout }) => {
+const Button = ({
+  text,
+  color,
+  type,
+  navigateOnClick,
+  logout,
+  onClickAddCart,
+}) => {
   const { handleLogoutAuthContext } = useSetAuthContext();
   const navigate = useNavigate();
 
   const { showMessage } = useMessageContext();
+  const { addToCart } = useSetCartContext();
+  const car = useCartContext();
 
   const buttonClass =
     color === "white" ? style.button__white : style.button__black;
@@ -25,8 +38,13 @@ const Button = ({ text, color, type, navigateOnClick, logout }) => {
     }
   };
 
+  const handleOnClickAdd = () => {
+    addToCart(onClickAddCart);
+    console.log(car);
+  };
+
   return (
-    <button className={buttonClass} type={type} onClick={handleClick}>
+    <button className={buttonClass} type={type} onClick={onClickAddCart ? handleOnClickAdd : handleClick}>
       {text}
     </button>
   );
