@@ -40,7 +40,6 @@ const Button = ({
 
   const handleOnClickAdd = () => {
     addToCart(onClickAddCart);
-    console.log(car);
   };
 
   return (
