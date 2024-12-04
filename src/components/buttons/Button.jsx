@@ -20,7 +20,7 @@ const Button = ({
 
   const { showMessage } = useMessageContext();
   const { addToCart } = useSetCartContext();
-  const car = useCartContext();
+  const cart = useCartContext();
 
   const buttonClass =
     color === "white" ? style.button__white : style.button__black;
@@ -40,6 +40,8 @@ const Button = ({
 
   const handleOnClickAdd = () => {
     addToCart(onClickAddCart);
+
+    console.log(cart)
   };
 
   return (
