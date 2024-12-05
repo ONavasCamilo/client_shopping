@@ -4,6 +4,7 @@ import TitleComponent from "../../components/title/TitleComponent";
 import { useCartContext } from "../../providers/CartProvider";
 import style from "./Car.module.css";
 import iconBagAdd from "/iconBagAdd.svg";
+import iconEquis from "/iconEquis.svg";
 
 const Car = () => {
   const car = useCartContext();
@@ -15,8 +16,15 @@ const Car = () => {
           <TitleComponent text="SU CARRITO" />
           {car.map((product) => (
             <div className={style.div__product} key={product.id}>
-                <img src={product.imgUrl} alt={product.name} className={style.div__product_img}/>
+              <img
+                src={product.imgUrl}
+                alt={product.name}
+                className={style.div__product_img}
+              />
               <p>{product.name}</p>
+              <img src={iconEquis} alt="" />
+              <p>0.600kg</p>
+              <p>Cantidad: 1</p>
               <p>{product.price}</p>
               <LineDiv />
             </div>

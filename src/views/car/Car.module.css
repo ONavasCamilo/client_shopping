@@ -4,6 +4,7 @@
 }
 
 .div__product {
+  display: flex;
 }
 
 .div__product_img {
