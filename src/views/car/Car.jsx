@@ -21,11 +21,13 @@ const Car = () => {
                 alt={product.name}
                 className={style.div__product_img}
               />
-              <p>{product.name}</p>
-              <img src={iconEquis} alt="" />
-              <p>0.600kg</p>
-              <p>Cantidad: 1</p>
-              <p>{product.price}</p>
+              <p className={style.div__name}>{product.name}</p>
+              <img src={iconEquis} alt="" className={style.div__icon_equis}/>
+              <div className={style.div__items}>
+              <p className={style.div__weight}>0.600kg</p>
+              <p className={style.div__quantity}>Cantidad: 1</p>
+              </div>
+              <p className={style.div__price}>{product.price}</p>
               <LineDiv />
             </div>
           ))}
