@@ -27,7 +27,7 @@ const Car = () => {
               <p className={style.div__weight}>0.600kg</p>
               <p className={style.div__quantity}>Cantidad: 1</p>
               </div>
-              <p className={style.div__price}>{product.price}</p>
+              <p className={style.div__price}>{product.price}€</p>
               <LineDiv />
             </div>
           ))}

@@ -27,6 +27,8 @@
 
 .div__icon_equis {
   grid-column: 5;
+  justify-self: right;
+  margin-top: 10px;
 }
 
 .div__items {
@@ -36,7 +38,6 @@
 }
 
 .div__weight {
-  align-items: start;
 }
 
 .div__quantity {
@@ -44,6 +45,10 @@
 
 .div__price {
   grid-column: 5;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  align-self: center;
 }
 
 .main__car {

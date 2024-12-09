@@ -3,6 +3,7 @@
     height: 1px;
     background-color: #3f3c3c3a;
     margin: 6px auto;
+
     grid-row: 3;
     grid-column: 1/6;
 }
