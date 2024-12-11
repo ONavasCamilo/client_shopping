@@ -61,6 +61,14 @@
   text-align: center;
 }
 
+.div__total {
+}
+
+.p__subtotal {
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .main__car h4 {
   font-size: 32px;
 }

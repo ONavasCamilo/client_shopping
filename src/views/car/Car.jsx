@@ -31,6 +31,15 @@ const Car = () => {
               <LineDiv />
             </div>
           ))}
+          <div className={style.div__total}>
+          <p className={style.p__subtotal}>Subtotal</p>
+          <p>36€</p>
+          <p>Impuesto (21%)</p>
+          <p>8.40€</p>
+          <p>Total</p>
+          <p>130.99€</p>
+          </div>
+          <Button text="Finalizar pedido"/>
         </main>
       ) : (
         <main className={style.main__car}>
