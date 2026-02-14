@@ -25,6 +25,7 @@ const Tshirts = () => {
         console.log(error);
       });
   }, []);
+
   return (
     <SectionFlexDirection>
       <TitleCenter text="CAMISETAS" />
