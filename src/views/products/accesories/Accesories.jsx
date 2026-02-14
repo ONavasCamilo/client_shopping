@@ -25,6 +25,7 @@ const Accesories = () => {
         console.log(error);
       });
   }, []);
+
   return (
     <SectionFlexDirection>
       <TitleCenter text="ACCESORIOS" />
@@ -37,7 +38,7 @@ const Accesories = () => {
                 className={style.link__product}
               >
                 <DivCardComponent
-                  key={product.id}
+                  // key={product.id}
                   imgSrc={product.imgUrl}
                   title={product.name}
                   price={product.price}

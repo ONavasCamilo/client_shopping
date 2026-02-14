@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import Message from "./components/message/Message";
 import {
   MessageProvider,
-  useMessageContext,
+  useMessageContext, 
 } from "./providers/MessageGlobalProvider";
 import Sweatshirts from "./views/products/sweatshirts/Sweatshirts";
 import Accesories from "./views/products/accesories/Accesories";
@@ -42,7 +42,7 @@ const App = () => {
       getLocalStorage();
     }
   });
-
+  
   return (
     <MessageProvider>
       <CartProvider>

@@ -15,7 +15,7 @@ const Sweatshirts = () => {
     axios
       .get(VITE_API_PRODUCTS_LIST, {
         params: {
-          category: "sudaderas",
+            category: "sudaderas",
         },
       })
       .then((response) => {
@@ -33,7 +33,7 @@ const Sweatshirts = () => {
         {dataProducts
           ? dataProducts.map((product) => (
               <Link
-                to={`/product?id=${product.id}`}
+                to={`/product?id=${product.id}`} 
                 key={product.id}
                 className={style.link__product}
               >
